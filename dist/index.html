@@ -6,9 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="./main.js" defer></script>
 </head>
+<div class="overlay"></div>
 <body>
+    <header>
+        <form id="search-form" action="">
+            <input id="search-field" type="text" value="" placeholder="City name">
+            <button id="search-btn"><span class="material-symbols-outlined">search</span></button>
+        </form>
+        <img id="logo" src="./images/openweather-logo-white.svg" alt="">
+    </header>
+    <main>
+        <div class="panel left">
+            <span class="text-p" id="city-name">City Name</span>
+            <div class="weather-description-holder">
+                <h1 class="text-l" id="weather-description">Weather Description </h1>
+                <span class="material-symbols-outlined" id="weather-icon">question_mark</span>
+            </div>
+            <h2 id="temperature">0 °C</h2>
+            <button id="change-units-btn">display °F</button>
+        </div>
+        <div class="panel right">
+            <div class="weather-parameter-card">
+                <div class="material-symbols-outlined">
+                    thermostat
+                    </div>
+                <div class="text-p">Feels Like</div>
+                <div id="feels-like" class="text-m">30 °C</div>
+            </div>
+            <div class="weather-parameter-card">
+                <div class="material-symbols-outlined">
+                    <span class="material-symbols-outlined">
+                        humidity_low
+                        </span>
+                    </div>
+                <div class="text-p">Humidity</div>
+                <div id="humidity" class="text-m">50 %</div>
+            </div>
+            <div class="weather-parameter-card">
+                <div class="material-symbols-outlined">
+                    air
+                    </div>
+                <div class="text-p">Wind Speed</div>
+                <div id="wind-speed" class="text-m">1.4 km/h</div>
+            </div>
+        </div>
+    </main>
+    <section class="controls">
+        <!-- <button class="active">Daily</button>
+        <button>Hourly</button> -->
+    </section>
+    <section id="card-holder">
+        
+    </section>
     
 </body>
 </html>

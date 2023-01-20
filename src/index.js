@@ -1,8 +1,26 @@
-const OPEN_WEATHER_API_KEY = 'de1ae8be874eb1bb11a00f17c0a6adf0';
-async function getWeather(location) {
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${OPEN_WEATHER_API_KEY}`);
-    const weatherData = await response.json();
-    return weatherData;
-}
+import * as app from "./app";
+import * as UI from "./UI";
+const searchForm = document.getElementById('search-form');
+const changeUnitsBtn = document.getElementById('change-units-btn');
+const searchField = document.getElementById('search-field');
 
-console.log(getWeather('saint petersburg'))
+window.onload = UI.fetchAndRender(app.getLocation());
+
+searchForm.addEventListener('submit', function (e){
+    e.preventDefault();
+    UI.fetchAndRender(searchField.value);
+})
+
+changeUnitsBtn.onclick = function () {
+    app.toggleUnits()
+    const units = app.getUnits()
+
+    if (units === 'metric') {
+        changeUnitsBtn.textContent = 'Display °F'
+    } else {
+        changeUnitsBtn.textContent = 'Display °C'
+    }
+
+    UI.renderData()
+    app.save();
+}
