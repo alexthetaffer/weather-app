@@ -2,6 +2,7 @@
 This weather app is a simple JavaScript application that retrieves the weather data of a specified location from the OpenWeatherMap API. The weather data is then processed and stored in the app, so it can be displayed to the user.
 
 [Live preview](https://alexthetaffer.github.io/weather-app/dist/index.html).
+![Weather App](https://raw.githubusercontent.com/alexthetaffer/weather-app/main/dist/images/daniel-pascoa-tjiPN3e45WE-unsplash.jpg)
 
 ## Key Features
 - Retrieves weather data for a specified location from the OpenWeatherMap API.
